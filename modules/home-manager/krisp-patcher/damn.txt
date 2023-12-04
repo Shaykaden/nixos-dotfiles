@@ -1,0 +1,6 @@
+Pourquoi le module ne marche pas ? idk
+
+pour patcher :
+nix-shell --command zsh -p python3 python311Packages.pip
+source .venv/bin/activate
+python3 krisp-patcher.py ~/.config/discord/<version>/modules/discord_krisp/discord_krisp.node
