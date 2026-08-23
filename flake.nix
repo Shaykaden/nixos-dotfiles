@@ -8,8 +8,8 @@
     niri.url = "github:epireyn/niri-flake";
 
     home-manager = {
-	url = "github:nix-community/home-manager";
-	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     noctalia = {
@@ -19,5 +19,5 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

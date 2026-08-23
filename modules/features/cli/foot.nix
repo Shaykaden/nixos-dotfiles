@@ -3,7 +3,6 @@
     self.homeModules.foot
   ];
 
-
   flake.homeModules.foot = { ... }: {
     programs.foot = {
       enable = true;
