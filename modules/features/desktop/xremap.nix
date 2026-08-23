@@ -1,4 +1,3 @@
-
 { self, inputs, ... }: {
   flake.nixosModules.phosConfiguration.imports = [
     self.nixosModules.xremap
@@ -9,23 +8,25 @@
       inputs.xremap-flake.nixosModules.default
     ];
 
-    #hardware.uinput.enable = true;
-    #boot.kernelModules = [ "uinput" ];
+    hardware.uinput.enable = true;
+    boot.kernelModules = [ "uinput" ];
 
-    #services.udev.extraRules = ''
-    #KERNEL=="uinput", GROUP="input", TAG+="uaccess"
-    #'';
+    services.udev.extraRules = ''
+      KERNEL=="uinput", GROUP="input", TAG+="uaccess"
+    '';
 
     services.xremap = {
       enable = true;
-      serviceMode = "user";
-      userName = "Phos";
+      withNiri = true;
+      watch = true;
     };
-    # Modmap for single key rebinds
+
     services.xremap.config.modmap = [
       {
         name = "Global";
-        remap = { "CapsLock" = "KEY_LEFTMETA"; }; # globally remap CapsLock to Esc
+        remap = {
+          "CapsLock" = "KEY_LEFTMETA";
+        }; # globally remap CapsLock to super
       }
     ];
   };
