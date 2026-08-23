@@ -1,3 +1,0 @@
-pour build niri en ce moment : ulimit -n 4096
-
-TODO : install script pour chmod +x dans ./script
