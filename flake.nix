@@ -16,6 +16,14 @@
       url = "github:noctalia-dev/noctalia";
     };
 
+    zen-browser = {
+        url = "github:0xc000022070/zen-browser-flake";
+        inputs = {
+          nixpkgs.follows = "nixpkgs";
+          home-manager.follows = "home-manager";
+        };
+      };
+
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
   };
 
