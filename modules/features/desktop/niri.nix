@@ -13,7 +13,10 @@
       portal = {
         enable = true;
         config.niri = {
-          default = ["gnome" "gtk"];
+          default = [
+            "gnome"
+            "gtk"
+          ];
           "org.freedesktop.impl.portal.Access" = "gtk";
           "org.freedesktop.impl.portal.FileChooser" = "gtk";
           "org.freedesktop.impl.portal.ScreenCast" = "gnome";
@@ -29,20 +32,20 @@
 
   flake.homeModules.niriPhos = { ... }: {
     imports = [
-        self.homeModules.niri
-      ];
+      self.homeModules.niri
+    ];
 
-      programs.niri.settings = {
-          outputs."DP-1" = {
-            mode = {
-              width = 3440;
-              height = 1440;
-              refresh = 179.989;
-            };
+    programs.niri.settings = {
+      outputs."DP-1" = {
+        mode = {
+          width = 3440;
+          height = 1440;
+          refresh = 179.989;
+        };
 
-            #variable-refresh-rate = true;   # screen flicker, check after driver installation + troubleshooting niri docs
-          };
+        #variable-refresh-rate = true;   # screen flicker, check after driver installation + troubleshooting niri docs
       };
+    };
   };
 
   flake.homeModules.niri = { pkgs, ... }: {
@@ -109,7 +112,7 @@
           clip-to-geometry = true;
         }
         {
-          matches = [ {app-id = "dev.noctalia.Noctalia"; } ];
+          matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
           open-floating = true;
         }
       ];
@@ -138,16 +141,16 @@
         "Mod+T".action.spawn = "foot";
         "Mod+B".action.spawn = "zen-beta";
 
-        "super+q".action.close-window = {};
-        "super+h".action.focus-column-left = {};
-        "super+l".action.focus-column-right = {};
-        "super+j".action.focus-window-or-workspace-down = {};
-        "super+k".action.focus-window-or-workspace-up = {};
+        "super+q".action.close-window = { };
+        "super+h".action.focus-column-left = { };
+        "super+l".action.focus-column-right = { };
+        "super+j".action.focus-window-or-workspace-down = { };
+        "super+k".action.focus-window-or-workspace-up = { };
 
-        "super+alt+h".action.move-column-left = {};
-        "super+alt+l".action.move-column-right = {};
-        "super+alt+j".action.move-window-down-or-to-workspace-down = {};
-        "super+alt+k".action.move-window-up-or-to-workspace-up = {};
+        "super+alt+h".action.move-column-left = { };
+        "super+alt+l".action.move-column-right = { };
+        "super+alt+j".action.move-window-down-or-to-workspace-down = { };
+        "super+alt+k".action.move-window-up-or-to-workspace-up = { };
 
         "super+alt+1".action.move-window-to-workspace = 1;
         "super+alt+2".action.move-window-to-workspace = 2;
@@ -163,26 +166,29 @@
         "super+p".action.set-column-width = "+10%";
         "super+alt+p".action.set-column-width = "-10%";
 
-
         "super+1".action.focus-workspace = 1;
         "super+2".action.focus-workspace = 2;
         "super+3".action.focus-workspace = 3;
         "super+4".action.focus-workspace = 4;
 
-        "super+r".action.toggle-overview = {};
-        "super+g".action.toggle-window-floating = {};
-        "super+f".action.fullscreen-window = {};
-
+        "super+r".action.toggle-overview = { };
+        "super+g".action.toggle-window-floating = { };
+        "super+f".action.fullscreen-window = { };
 
         # # TODO : scroll more smooth please
-        "super+WheelScrollDown".action.focus-column-right = {};
-        "super+WheelScrollUp".action.focus-column-left = {};
+        "super+WheelScrollDown".action.focus-column-right = { };
+        "super+WheelScrollUp".action.focus-column-left = { };
 
-        "super+alt+WheelScrollDown".action.focus-workspace-down = {};
-        "super+alt+WheelScrollUp".action.focus-workspace-up = {};
+        "super+alt+WheelScrollDown".action.focus-workspace-down = { };
+        "super+alt+WheelScrollUp".action.focus-workspace-up = { };
 
         # Noctalia
-        "super+space".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher"];
+        "super+space".action.spawn = [
+          "noctalia"
+          "msg"
+          "panel-toggle"
+          "launcher"
+        ];
       };
 
     };
