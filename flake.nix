@@ -6,6 +6,7 @@
     import-tree.url = "github:vic/import-tree";
 
     niri.url = "github:epireyn/niri-flake";
+    xremap-flake.url = "github:xremap/nix-flake";
 
     home-manager = {
       url = "github:nix-community/home-manager";
