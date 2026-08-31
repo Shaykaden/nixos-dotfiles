@@ -110,6 +110,10 @@
       homeDirectory = "/home/phos";
     };
 
+    imports = [
+      self.homeModules.desktop
+    ];
+
     programs.bash.enable = true;
     programs.bash.shellAliases.ll = "ls -l";
 
