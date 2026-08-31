@@ -160,8 +160,8 @@
         # # TODO: add +10% -10% on [ ]
         # # TODO: fix le petit decalement
         "super+alt+u".action.set-column-width = "100%";
-        "super+u".action.set-column-width = "50%";
-        "super+i".action.set-column-width = "33.333%";
+        "super+u".action.set-column-width = "33.333%";
+        "super+i".action.set-column-width = "50%";
         "super+o".action.set-column-width = "66.667%";
         "super+p".action.set-column-width = "+10%";
         "super+alt+p".action.set-column-width = "-10%";
