@@ -17,6 +17,8 @@
         "flakes"
       ];
 
+      nixpkgs.config.allowUnfree = true;
+
       # Bootloader.
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
@@ -113,7 +115,7 @@
     imports = [
       self.homeModules.desktop
     ];
-
+    nixpkgs.config.allowUnfree = true;
     programs.bash.enable = true;
     programs.bash.shellAliases.ll = "ls -l";
 
