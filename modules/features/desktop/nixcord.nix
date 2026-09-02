@@ -13,7 +13,10 @@
       discord = {
         krisp.enable = true;
         equicord.enable = true;
+        openASAR.enable = true;
       };
+
+      # TODO : Config plugins, etc
     };
   };
 }
