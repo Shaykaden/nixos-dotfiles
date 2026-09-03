@@ -42,6 +42,7 @@
         }
       ];
 
+      initContent = ''eval "$(devenv hook zsh)"''; # Devenv autoactivation
       # initExtra = mkIf cfg.enableZshIntegration ''
       #    eval "$(${cfg.package}/bin/zoxide init zsh ${cfgOptions})"
       #    '';
