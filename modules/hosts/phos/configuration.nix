@@ -75,6 +75,10 @@
         #  wget
       ];
 
+      programs.zsh.enable = true;
+      users.defaultUserShell = pkgs.zsh;
+      environment.shells = with pkgs; [ zsh ]; # From doc : To add the zsh package to /etc/shells you must update environment.shells.
+
       #==== home-manager configuration
       home-manager.users.phos = self.homeModules.phosConfiguration;
       # Some programs need SUID wrappers, can be configured further or are
