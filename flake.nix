@@ -27,6 +27,11 @@
 
     nixcord.url = "github:4evy/nixcord";
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
   };
 

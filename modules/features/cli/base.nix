@@ -1,11 +1,15 @@
 { self, ... }: {
   flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.foot
+    self.homeModules.base
   ];
 
-  flake.homeModules.foot = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      nix-index
-    ];
+  flake.homeModules.base = { ... }: {
+    programs.tealdeer = {
+      enable = true;
+      enableAutoUpdates = true;
+    };
+    #home.packages = with pkgs; [
+    #tealdeer
+    #];
   };
 }

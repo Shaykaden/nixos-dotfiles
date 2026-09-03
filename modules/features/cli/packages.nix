@@ -21,7 +21,6 @@
       eza
       #skim
       bat
-      tealdeer
       duf
       fd
 
