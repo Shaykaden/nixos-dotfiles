@@ -1,0 +1,25 @@
+[project]
+name = "boshi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+authors = [{ name = "Shaykaden", email = "none@none.com" }]
+dependencies = [
+  "vapoursynth>=79",
+  "vsjetpack[full]>=2.2.4",
+  "vsview[full]>=0.10.3",
+]
+
+[project.scripts]
+boshi = "boshi:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+
+[[tool.uv.index]]
+url = "https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple"
