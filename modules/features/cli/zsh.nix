@@ -25,6 +25,8 @@
         "ll" = "eza --icons --sort=type -alh";
         "tree" = "eza --icons --sort=type --tree";
 
+        "z" = "zoxide";
+
         "bat" = "bat --theme base16";
         "oproject" = "cd $HOME/repos/ ; nvim $(fzf)";
         "edit" = "nvim $(fzf -e)";
