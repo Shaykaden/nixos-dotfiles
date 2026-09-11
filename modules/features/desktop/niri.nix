@@ -8,6 +8,7 @@
     imports = [ inputs.niri.nixosModules.niri ];
     programs.niri = {
       enable = true;
+      package = pkgs.niri; # use pkgs
     };
     xdg = {
       portal = {
@@ -55,6 +56,10 @@
     ];
 
     programs.niri.settings = {
+      spawn-at-startup = [
+        { argv = [ "noctalia" ]; }
+      ];
+
       cursor = {
         theme = "Bibata-Modern-Ice";
         size = 24;
