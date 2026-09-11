@@ -9,7 +9,5 @@
       enable = true;
       enable32Bit = true;
     };
-
   };
-
 }
