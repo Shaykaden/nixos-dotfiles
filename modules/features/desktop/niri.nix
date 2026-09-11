@@ -120,6 +120,10 @@
           matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
           open-floating = true;
         }
+        {
+          matches = [ { app-id = "net.davidotek.pupgui2"; } ];
+          open-floating = true;
+        }
       ];
 
       debug.honor-xdg-activation-with-invalid-serial = true;
