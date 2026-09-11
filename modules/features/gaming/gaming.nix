@@ -1,19 +1,10 @@
 { self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.osu
-  ];
 
   flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.opentabletdriver
+    self.nixosModules.gaming-config
   ];
 
-  flake.homeModules.osu = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      osu-lazer-bin
-    ];
-  };
-
-  flake.nixosModules.opentabletdriver = { pkgs, ... }: {
+  flake.nixosModules.gaming-config = { pkgs, ... }: {
     programs.gamemode.enable = true; # for performance mode
     programs.gamescope.enable = true;
 
@@ -38,6 +29,9 @@
       })
       lutris # install lutris launcher
       faugus-launcher
+      hydralauncher
+
+      mangohud
       protonup-qt # GUI for installing custom Proton versions like GE_Proton
       steam-run # Use "steam-run ./my-game" to launch in FHS environment used by steam
     ];

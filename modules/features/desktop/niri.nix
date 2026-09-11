@@ -81,7 +81,7 @@
           { proportion = 2. / 3.; }
         ];
         default-column-width = {
-          proportion = 2. / 3.;
+          proportion = 1. / 2.;
         };
 
         border = {
