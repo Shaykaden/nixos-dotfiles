@@ -5,6 +5,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
     niri.url = "github:epireyn/niri-flake";
     xremap-flake.url = "github:xremap/nix-flake";
 
@@ -26,6 +28,8 @@
     };
 
     nixcord.url = "github:4evy/nixcord";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # IMPORTANT
+    #nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
