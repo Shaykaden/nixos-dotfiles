@@ -5,6 +5,8 @@
   ];
 
   flake.nixosModules.gaming-config = { pkgs, ... }: {
+    boot.kernelModules = [ "ntsync" ]; # enable ntsync (from what I read, it's not on by default)
+
     programs.gamemode.enable = true; # for performance mode
     programs.gamescope.enable = true;
 
@@ -38,6 +40,13 @@
 
       protonup-qt # GUI for installing custom Proton versions like GE_Proton
       steam-run # Use "steam-run ./my-game" to launch in FHS environment used by steam
+    ];
+
+    services.flatpak.packages = [
+      {
+        flatpakref = "https://chrisdkn.github.io/Amethyst-Mod-Manager/amethyst.flatpakref";
+        sha256 = "1iwzky2nbd0wp4ydmcbh1ap1rzfa7kr55qfsq9wvm3w3i8bsjqih";
+      }
     ];
   };
 }

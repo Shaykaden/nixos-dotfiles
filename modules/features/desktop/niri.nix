@@ -44,7 +44,7 @@
           refresh = 179.989;
         };
 
-        #variable-refresh-rate = true;   # screen flicker, check after driver installation + troubleshooting niri docs
+        variable-refresh-rate = "on-demand"; # screen flicker, check after driver installation + troubleshooting niri docs
       };
     };
   };
@@ -123,6 +123,10 @@
         {
           matches = [ { app-id = "net.davidotek.pupgui2"; } ];
           open-floating = true;
+        }
+        {
+          matches = [ { app-id = "steam_app_default"; } ];
+          variable-refresh-rate = true;
         }
       ];
 
