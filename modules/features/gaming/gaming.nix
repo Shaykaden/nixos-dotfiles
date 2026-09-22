@@ -36,7 +36,7 @@
       lsfg-vk-ui
 
       mangohud
-      goverlay
+      mangojuice
 
       protonup-qt # GUI for installing custom Proton versions like GE_Proton
       steam-run # Use "steam-run ./my-game" to launch in FHS environment used by steam
