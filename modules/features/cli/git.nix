@@ -1,9 +1,9 @@
-{ self, pkgs, ... }: {
+{ self, ... }: {
   flake.homeModules.phosConfiguration.imports = [
     self.homeModules.git
   ];
 
-  flake.homeModules.git = { ... }: {
+  flake.homeModules.git = { pkgs, ... }: {
     programs.git = {
       enable = true;
       settings = {
@@ -15,7 +15,7 @@
       };
     };
 
-    home.packges = with pkgs; [
+    home.packages = with pkgs; [
       lazygit
     ];
   };
