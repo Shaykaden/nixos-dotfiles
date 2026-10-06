@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ self, pkgs, ... }: {
   flake.homeModules.phosConfiguration.imports = [
     self.homeModules.git
   ];
@@ -14,5 +14,9 @@
         init.defaultBranch = "main";
       };
     };
+
+    home.packges = with pkgs; [
+      lazygit
+    ];
   };
 }
