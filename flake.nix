@@ -29,7 +29,8 @@
 
     nixcord.url = "github:4evy/nixcord";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # IMPORTANT
-    #nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+    volt-gui.url = "github:keygenesis/volt-gui-nix";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ self, inputs, ... }: {
 
   flake.nixosModules.phosConfiguration.imports = [
     self.nixosModules.gaming-config
@@ -9,6 +9,8 @@
 
     programs.gamemode.enable = true; # for performance mode
     programs.gamescope.enable = true;
+
+    services.lact.enable = true;
 
     programs.steam = {
       enable = true; # install steam
@@ -40,6 +42,8 @@
 
       protonup-qt # GUI for installing custom Proton versions like GE_Proton
       steam-run # Use "steam-run ./my-game" to launch in FHS environment used by steam
+
+      inputs.volt-gui.packages.${pkgs.system}.default
     ];
 
     services.flatpak.packages = [
