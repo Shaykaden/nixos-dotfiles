@@ -11,5 +11,7 @@
       enable = true;
       enable32Bit = true;
     };
+
+    zramSwap.enable = true; # To run local IA without problem with RAM  # Test if useful or not
   };
 }
