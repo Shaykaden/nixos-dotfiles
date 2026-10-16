@@ -1,14 +1,8 @@
-{ inputs, self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.nixcord
-  ];
-
-  flake.homeModules.media = { pkgs, ... }: {
-    imports = [ inputs.nixcord.homeModules.nixcord ];
-
+{ ... }: {
+  flake.homeModules.desktop = { pkgs, ... }: {
     home.packages = with pkgs; [
-      plex-desktop
-      plezy
+      #webcord-vencord
+      appimage-run
     ];
   };
 }
