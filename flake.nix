@@ -38,6 +38,8 @@
     };
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
+    comfyui-nix.url = "github:utensils/comfyui-nix";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
