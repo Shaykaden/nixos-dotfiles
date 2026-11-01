@@ -11,7 +11,7 @@
     users.users.phos.linger = true;
   };
 
-  flake.homeModules.hermes = { pkgs, ... }: {
+  flake.homeModules.hermes = { pkgs, config, ... }: {
     imports = [ inputs.hermes-agent.homeManagerModules.default ];
 
     programs.hermes-agent = {
@@ -23,9 +23,10 @@
       enable = true;
       gateway.enable = true;
       #settings.model.default = "anthropic/claude-sonnet-4";
-      #environmentFiles = [ config.sops.secrets."hermes-env".path ];
+      environmentFiles = [ config.sops.secrets."hermes-env".path ];
       backend.mode = "dashboard"; # + the browser dashboard on 127.0.0.1:9119
       backend.port = 9119;
     };
+
   };
 }
