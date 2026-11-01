@@ -10,6 +10,7 @@
       inputs.nix-index-database.nixosModules.default
       inputs.chaotic.nixosModules.default
       inputs.nix-flatpak.nixosModules.nix-flatpak
+      inputs.sops-nix.nixosModules.sops
     ];
   };
 }
