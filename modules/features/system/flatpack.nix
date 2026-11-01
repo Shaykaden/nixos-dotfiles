@@ -10,8 +10,8 @@
 
     # Exemple : install a flatpack package
     #services.flatpak.packages = [
-    #  # Classic
-    #  { appId = "com.brave.Browser"; origin = "flathub";  }
+    #  # classic
+    #  { appid = "com.brave.browser"; origin = "flathub";  }
     #  "im.riot.Riot"
     #
     #  # Flatpakref files

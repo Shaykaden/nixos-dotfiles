@@ -1,11 +1,14 @@
 { self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.unity
+  flake.nixosModules.phosConfiguration.imports = [
+    self.nixosModules.unity
   ];
 
-  flake.homeModules.unity = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      unityhub
+  flake.nixosModules.unity = { pkgs, ... }: {
+    services.flatpak.packages = [
+      {
+        appId = "com.unity.UnityHub";
+        origin = "flathub";
+      }
     ];
   };
 }
