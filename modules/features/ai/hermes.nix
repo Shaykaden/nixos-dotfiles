@@ -11,8 +11,13 @@
     users.users.phos.linger = true;
   };
 
-  flake.homeModules.hermes = { ... }: {
+  flake.homeModules.hermes = { pkgs, ... }: {
     imports = [ inputs.hermes-agent.homeManagerModules.default ];
+
+    programs.hermes-agent = {
+      enable = true; # hermes CLI dans home.packages + HERMES_HOME exporté
+      desktop.enable = true; # optionnel : app Desktop + entrée de menu
+    };
 
     services.hermes-agent = {
       enable = true;
