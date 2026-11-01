@@ -7,7 +7,7 @@
     self.homeModules.unity
   ];
 
-  flake.nixosModules.unity = { pkgs, ... }: {
+  flake.nixosModules.unity = { ... }: {
     services.flatpak.packages = [
       {
         appId = "com.unity.UnityHub";
@@ -23,7 +23,6 @@
     {
       pkgs,
       lib,
-      config,
       ...
     }:
     {
