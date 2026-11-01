@@ -126,9 +126,6 @@
       homeDirectory = "/home/phos";
     };
 
-    imports = [
-      self.homeModules.desktop
-    ];
     nixpkgs.config.allowUnfree = true;
     programs.bash.enable = true;
     programs.bash.shellAliases.ll = "ls -l";
