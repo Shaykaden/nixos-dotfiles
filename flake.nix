@@ -40,6 +40,7 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     comfyui-nix.url = "github:utensils/comfyui-nix";
+    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
