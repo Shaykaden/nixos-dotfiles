@@ -15,7 +15,7 @@
       }
     ];
 
-    # nix-ld to execute unity-cli then add it to the path
+    # nix-ld to execute unity-cli
     programs.nix-ld.enable = true;
   };
 
