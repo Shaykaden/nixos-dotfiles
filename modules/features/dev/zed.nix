@@ -11,9 +11,9 @@
 
       extensions = [
         "nix"
-        "Charmed Icons"
-        "TOML"
-        "Tombi | TOML Toolkit"
+        "charmed-icons"
+        "toml"
+        "tombi"
       ];
 
       extraPackages = with pkgs; [
@@ -83,7 +83,7 @@
         git_panel = {
           show_count_badge = false;
           diff_stats = true;
-          folder_icons = true;
+          folder_indicator = true;
           file_icons = false;
           tree_view = true;
           collapse_untracked_diff = false;
@@ -151,7 +151,7 @@
         };
 
         completions = {
-          lsp_fetch_timeout_ms = 0;
+          lsp_fetch_timeout_ms = 1;
         };
 
         document_folding_ranges = "off";
@@ -223,15 +223,15 @@
           };
         };
 
-        edit_predictions = {
-          open_ai_compatible_api = {
-            model = "";
-          };
-          ollama = {
-            model = "qwen2.5-coder =7b-base";
-            api_url = "http =//localhost =11434";
-          };
-        };
+        # edit_predictions = {
+        #   open_ai_compatible_api = {
+        #     model = "";
+        #   };
+        #   ollama = {
+        #     model = "qwen2.5-coder =7b-base";
+        #     api_url = "http =//localhost =11434";
+        #   };
+        # };
 
         telemetry = {
           diagnostics = false;
