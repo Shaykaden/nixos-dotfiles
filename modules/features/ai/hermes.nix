@@ -25,25 +25,24 @@
     services.hermes-agent = {
       enable = true;
       gateway.enable = true;
-      #settings.model.default = "anthropic/claude-sonnet-4";
       environmentFiles = [ config.sops.secrets."hermes-env".path ];
       backend.mode = "dashboard"; # + the browser dashboard on 127.0.0.1:9119
       backend.port = 9119;
 
       settings = {
         model = {
-          provider = "deepseek";
-          default = "deepseek-v4-flash"; # ou "deepseek-reasoner" pour le mode thinking
+          default = "deepseek-flash";
+          base_url = "https://api.deepseek.com";
         };
 
         # Ton modèle local reste accessible via /model qwen
-        model_aliases = {
-          qwen = {
-            model = "qwen3.8-flash-next-coder-iq1_m";
-            provider = "custom";
-            base_url = "http://127.0.0.1:8080/v1";
-          };
-        };
+        # model_aliases = {
+        #   qwen = {
+        #     model = "qwen3.8-flash-next-coder-iq1_m";
+        #     provider = "custom";
+        #     base_url = "http://127.0.0.1:8080/v1";
+        #   };
+        # };
       };
     };
 

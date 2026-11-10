@@ -1,7 +1,0 @@
-keys:
-  - &phos age13qhe8d5w0sqmu4xsk6u24vdrpf3ek353ynm69qskcck25eg2n4rsu4d2zg   # ta public key de l'étape 1
-creation_rules:
-  - path_regex: ^secrets/.*\.yaml$
-    key_groups:
-      - age:
-          - *phos
