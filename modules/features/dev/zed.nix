@@ -16,9 +16,11 @@
         "Tombi | TOML Toolkit"
       ];
 
-      extraPackages = [
-        pkgs.nixd
-        pkgs.nil
+      extraPackages = with pkgs; [
+        nixd
+        nil
+        ruff
+        basedpyright
       ]; # need lsp install for zed
 
       userSettings = {
@@ -36,6 +38,26 @@
           nix = {
             binary = {
               path_lookup = true;
+            };
+          };
+
+          basedpyright = {
+            settings = {
+              basedpyright = {
+                analysis = {
+                  diagnosticMode = "workspace";
+                  typeCheckingMode = "standard";
+                  autoImportCompletions = true;
+                };
+              };
+            };
+          };
+
+          ruff = {
+            initialization_options = {
+              settings = {
+                lineLength = 88;
+              };
             };
           };
         };
@@ -173,6 +195,31 @@
         languages = {
           Nix = {
             format_on_save = "on";
+          };
+          Python = {
+            tab_size = 4;
+            hard_tabs = false;
+            preferred_line_length = 88;
+
+            format_on_save = "on";
+
+            formatter = {
+              language_server = {
+                name = "ruff";
+              };
+            };
+
+            # Organisation des imports et corrections automatiques
+            code_actions_on_format = {
+              "source.organizeImports.ruff" = false;
+              "source.fixAll.ruff" = true;
+            };
+
+            # Serveurs de langage
+            language_servers = [
+              "basedpyright"
+              "ruff"
+            ];
           };
         };
 
