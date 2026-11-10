@@ -212,7 +212,7 @@
             # Organisation des imports et corrections automatiques
             code_actions_on_format = {
               "source.organizeImports.ruff" = false;
-              "source.fixAll.ruff" = true;
+              "source.fixAll.ruff" = false;
             };
 
             # Serveurs de langage
