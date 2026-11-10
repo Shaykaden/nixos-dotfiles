@@ -1,9 +1,9 @@
 { self, ... }: {
   flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.secrects
+    self.homeModules.secrets
   ];
 
-  flake.homeModules.dev = { pkgs, ... }: {
+  flake.homeModules.secrets = { pkgs, ... }: {
     home.packages = with pkgs; [
       #secretspec
       sops
