@@ -32,9 +32,17 @@
 
       settings = {
         model = {
-          provider = "custom";
-          base_url = "http://127.0.0.1:8080/v1";
-          default = "qwen3.8-flash-next-coder-iq1_m";
+          provider = "deepseek";
+          default = "deepseek-v4-flash"; # ou "deepseek-reasoner" pour le mode thinking
+        };
+
+        # Ton modèle local reste accessible via /model qwen
+        model_aliases = {
+          qwen = {
+            model = "qwen3.8-flash-next-coder-iq1_m";
+            provider = "custom";
+            base_url = "http://127.0.0.1:8080/v1";
+          };
         };
       };
     };
