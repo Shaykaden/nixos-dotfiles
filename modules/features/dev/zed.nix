@@ -30,6 +30,26 @@
           show_sign_in = false;
         };
 
+        # DeepSeek via l'API : clé dans le keychain Zed (`agent: open settings` →
+        # DeepSeek) ou variable DEEPSEEK_API_KEY dans l'environnement du process.
+        language_models.deepseek = {
+          api_url = "https://api.deepseek.com/v1";
+          available_models = [
+            {
+              name = "deepseek-flash";
+              display_name = "DeepSeek Flash";
+              max_tokens = 1000000;
+              max_output_tokens = 384000;
+            }
+            {
+              name = "deepseek-v4-pro";
+              display_name = "DeepSeek V4 Pro";
+              max_tokens = 1000000;
+              max_output_tokens = 384000;
+            }
+          ];
+        };
+
         lsp = {
           nix = {
             binary = {
