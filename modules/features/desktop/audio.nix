@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { ... }: {
-  flake.nixosModules.phosConfiguration = { pkgs, ... }: {
+  flake.nixosModules.audio = { pkgs, ... }: {
     security.rtkit.enable = true; # Enable RealtimeKit to use the realtime scheduler for increased performance
 
     services.pipewire = {

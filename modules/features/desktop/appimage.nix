@@ -1,9 +1,5 @@
-{ self, ... }: {
-  flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.desktop
-  ];
-
-  flake.nixosModules.desktop = { ... }: {
+{ ... }: {
+  flake.nixosModules.appimage = { ... }: {
     programs.appimage.enable = true;
     programs.appimage.binfmt = true; # permet d'executer ./app.appimage sans utiliser la commande run-appimage
 

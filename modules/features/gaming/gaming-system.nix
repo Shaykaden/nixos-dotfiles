@@ -1,10 +1,6 @@
-{ self, inputs, ... }: {
+{ inputs, ... }: {
 
-  flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.gaming-config
-  ];
-
-  flake.nixosModules.gaming-config = { pkgs, ... }: {
+  flake.nixosModules.gaming-system = { pkgs, ... }: {
     boot.kernelModules = [ "ntsync" ]; # enable ntsync (from what I read, it's not on by default)
 
     programs.gamemode.enable = true; # for performance mode

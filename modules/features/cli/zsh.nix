@@ -1,8 +1,4 @@
-{ self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.zsh
-  ];
-
+{ ... }: {
   flake.homeModules.zsh = { pkgs, ... }: {
     programs.zsh = {
       enable = true;
@@ -11,9 +7,9 @@
       enableCompletion = true;
 
       shellAliases = {
-        "update" = "cd $HOME/nix; nix flake update; cd -";
-        "rebuild" = "sudo nixos-rebuild switch --flake $HOME/nix#mizuho";
-        "hrebuild" = "home-manager switch --flake $HOME/nix#mizuho";
+        "update" = "cd /home/phos/dotfiles && nix flake update";
+        "rebuild" = "nh os switch";
+        "hrebuild" = "nh home switch";
         "nix-run" = "nix run nixpkgs#";
         "nix-shell" = "nix-shell --command zsh -p";
         "nix shell" = "nix shell --command zsh";

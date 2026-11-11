@@ -1,8 +1,4 @@
-{ self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.packages
-  ];
-
+{ ... }: {
   flake.homeModules.packages = { pkgs, ... }: {
     home.packages = with pkgs; [
       # general

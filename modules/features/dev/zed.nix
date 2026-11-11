@@ -1,8 +1,4 @@
-{ self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.zed
-  ];
-
+{ ... }: {
   # TODO : keybinds
   flake.homeModules.zed = { pkgs, ... }: {
     programs.zed-editor = {

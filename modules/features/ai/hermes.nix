@@ -1,12 +1,4 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.hermes
-  ];
-
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.hermes
-  ];
-
+{ inputs, ... }: {
   flake.nixosModules.hermes = { ... }: {
     users.users.phos.linger = true;
   };

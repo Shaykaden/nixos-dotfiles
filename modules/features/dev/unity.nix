@@ -1,12 +1,4 @@
-{ self, ... }: {
-  flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.unity
-  ];
-
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.unity
-  ];
-
+{ ... }: {
   flake.nixosModules.unity = { ... }: {
     services.flatpak.packages = [
       {

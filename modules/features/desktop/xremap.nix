@@ -1,8 +1,4 @@
 { self, inputs, ... }: {
-  flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.xremap
-  ];
-
   flake.nixosModules.xremap = { ... }: {
     imports = [
       inputs.xremap-flake.nixosModules.default

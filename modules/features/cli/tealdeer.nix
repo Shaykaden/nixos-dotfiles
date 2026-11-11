@@ -1,9 +1,5 @@
-{ self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.base
-  ];
-
-  flake.homeModules.base = { ... }: {
+{ ... }: {
+  flake.homeModules.tealdeer = { ... }: {
     programs.tealdeer = {
       enable = true;
       #enableAutoUpdates = true; #Does not work ?

@@ -1,18 +1,9 @@
 {
   pkgs,
-  self,
   inputs,
   ...
 }:
 {
-
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.noctalia
-  ];
-
-  flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.noctalia
-  ];
 
   flake.homeModules.noctalia = { pkgs, ... }: {
 

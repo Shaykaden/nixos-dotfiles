@@ -1,5 +1,5 @@
 { ... }: {
-  flake.nixosModules.phosConfiguration = { pkgs, ... }: {
+  flake.nixosModules.nh = { pkgs, ... }: {
     programs.nh = {
       enable = true;
       clean.enable = true;

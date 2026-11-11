@@ -1,8 +1,4 @@
-{ self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.git
-  ];
-
+{ ... }: {
   flake.homeModules.git = { pkgs, ... }: {
     programs.git = {
       enable = true;

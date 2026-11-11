@@ -1,8 +1,4 @@
-{ self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.starship
-  ];
-
+{ ... }: {
   flake.homeModules.starship = { pkgs, lib, ... }: {
     programs.starship = {
       enable = true;

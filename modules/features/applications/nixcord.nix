@@ -1,8 +1,4 @@
-{ inputs, self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.nixcord
-  ];
-
+{ inputs, ... }: {
   flake.homeModules.nixcord = { pkgs, ... }: {
 
     imports = [ inputs.nixcord.homeModules.nixcord ];

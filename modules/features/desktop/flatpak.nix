@@ -1,5 +1,5 @@
 { ... }: {
-  flake.nixosModules.phosConfiguration = { ... }: {
+  flake.nixosModules.flatpak = { ... }: {
     # check modules
     services.flatpak.enable = true;
     services.flatpak.update.auto = {

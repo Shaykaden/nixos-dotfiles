@@ -1,8 +1,4 @@
-{ inputs, self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.media
-  ];
-
+{ inputs, ... }: {
   flake.homeModules.media = { pkgs, ... }: {
     imports = [ inputs.nixcord.homeModules.nixcord ];
 

@@ -1,8 +1,4 @@
-{ self, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.prismlauncher
-  ];
-
+{ ... }: {
   flake.homeModules.prismlauncher = { pkgs, ... }: {
     home.packages = with pkgs; [
       (prismlauncher.override {

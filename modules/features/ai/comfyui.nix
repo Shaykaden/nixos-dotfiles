@@ -1,8 +1,4 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.phosConfiguration.imports = [
-    self.nixosModules.comfyui
-  ];
-
+{ inputs, ... }: {
   flake.nixosModules.comfyui = { ... }: {
     imports = [
       inputs.comfyui-nix.nixosModules.default

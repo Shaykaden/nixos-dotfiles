@@ -1,6 +1,6 @@
 # CHECK : https://wiki.nixos.org/wiki/Fixes_for_non-Nix_applications
 { ... }: {
-  flake.nixosModules.phosConfiguration =
+  flake.nixosModules.misc-usr-fix =
     { pkgs, ... }:
     let
       # Mount options for the bind mounts

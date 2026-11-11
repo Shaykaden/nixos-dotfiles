@@ -1,8 +1,4 @@
 { self, inputs, ... }: {
-  flake.homeModules.phosConfiguration.imports = [
-    self.homeModules.zen
-  ];
-
   flake.homeModules.zen = { ... }: {
     imports = [
       inputs.zen-browser.homeModules.beta
