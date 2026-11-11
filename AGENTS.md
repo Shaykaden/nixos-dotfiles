@@ -42,8 +42,13 @@ Formatage (réécrit le dépôt) et son check :
 
 ```sh
 nix fmt
-nix build --no-link "path:$PWD#checks.x86_64-linux.treefmt"
+nix build --no-link ".#checks.x86_64-linux.treefmt"
 ```
+
+Le check treefmt se construit **sans** `path:` : sa dérivation copie la source puis fait
+`git init`/`git commit` dedans, et un URL `path:` embarque le vrai `.git`, ce qui rend ce commit
+vide et fait échouer le build. `nix fmt` travaille lui sur l'arbre de travail, fichiers non suivis
+compris.
 
 Appliquer (effet de bord : uniquement si l'utilisateur le demande, nécessite sudo) :
 
