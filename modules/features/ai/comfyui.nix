@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.nixosModules.comfyui = { ... }: {
+  flake.nixosModules.comfyui = {
     imports = [
       inputs.comfyui-nix.nixosModules.default
     ];
@@ -14,7 +14,6 @@
       group = "users";
       dataDir = "/home/phos/nixModules/comfyui-data";
       openFirewall = false;
-      # environment = { };
       extraArgs = [
         "--disable-xformers"
         "--use-pytorch-cross-attention"

@@ -1,4 +1,4 @@
-{ ... }: {
+{
   flake.homeModules.zsh = { pkgs, ... }: {
     programs.zsh = {
       enable = true;
@@ -14,9 +14,8 @@
         "nix-shell" = "nix-shell --command zsh -p";
         "nix shell" = "nix shell --command zsh";
         "ndev" = "nix develop --command zsh;";
-        "py-source" = "";
 
-        "ls" = "eza --icons --sort=type --tree --level=1 --icons --sort=type";
+        "ls" = "eza --icons --sort=type --tree --level=1";
         "l" = "eza --icons --sort=type -G";
         "ll" = "eza --icons --sort=type -alh";
         "tree" = "eza --icons --sort=type --tree";
@@ -41,9 +40,6 @@
       ];
 
       initContent = ''eval "$(devenv hook zsh)"''; # Devenv autoactivation
-      # initExtra = mkIf cfg.enableZshIntegration ''
-      #    eval "$(${cfg.package}/bin/zoxide init zsh ${cfgOptions})"
-      #    '';
     };
   };
 }

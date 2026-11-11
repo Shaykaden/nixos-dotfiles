@@ -1,9 +1,6 @@
-{ ... }: {
+{
   flake.homeModules.packages = { pkgs, ... }: {
     home.packages = with pkgs; [
-      # general
-      #neofetch
-
       # archives
       zip
       xz
@@ -12,24 +9,16 @@
 
       # utils
       ripgrep
-      #jq # A lightweight and flexible command-line JSON processor
-      #yq-go # yaml processer https://github.com/mikefarah/yq
       eza
-      #skim
       bat
       duf
       fd
 
-      #xdg-utils # TODO: maybe des configs  ?
       fzf # TODO: config
 
-      #appimage-run
       nix-output-monitor
 
-      #enhanced-ctorrent
-
       htop
-      # blobdrop
     ];
   };
 }

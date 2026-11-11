@@ -180,33 +180,6 @@
           "launcher"
         ];
       };
-
     };
-
   };
-
-  ########perSystem = { pkgs, lib, self', ...}: {
-  ########	packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-  ########		inherit pkgs;
-  ########		settings = {
-  ########			input.keyboard = {
-  ########				xkb.layout = "us,ua";
-  ########			};
-
-  ########			layout.gaps = 5;
-
-  ########			binds = {
-  ########				"Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
-  ########			};
-  ########			cursor = {
-  ########				#TODO import cursor : theme = "Bibata-Modern-Ice";
-  ########				size = 24;
-  ########				hide-when-typing = true;
-  ########				hide-after-inactive-ms = 5000;
-  ########			};
-
-  ########		};
-
-  ########	};
-  ########};
 }

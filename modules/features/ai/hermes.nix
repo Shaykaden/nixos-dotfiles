@@ -1,9 +1,9 @@
 { inputs, ... }: {
-  flake.nixosModules.hermes = { ... }: {
+  flake.nixosModules.hermes = {
     users.users.phos.linger = true;
   };
 
-  flake.homeModules.hermes = { pkgs, config, ... }: {
+  flake.homeModules.hermes = { config, ... }: {
     imports = [
       inputs.hermes-agent.homeManagerModules.default
       inputs.sops-nix.homeManagerModules.sops
@@ -26,15 +26,6 @@
           default = "deepseek-flash";
           base_url = "https://api.deepseek.com";
         };
-
-        # Ton modèle local reste accessible via /model qwen
-        # model_aliases = {
-        #   qwen = {
-        #     model = "qwen3.8-flash-next-coder-iq1_m";
-        #     provider = "custom";
-        #     base_url = "http://127.0.0.1:8080/v1";
-        #   };
-        # };
       };
     };
 
@@ -45,6 +36,5 @@
         format = "yaml";
       };
     };
-
   };
 }

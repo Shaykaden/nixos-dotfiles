@@ -27,13 +27,10 @@
         options = "--delete-older-than 90d";
       };
 
-      # Enable networking
       networking.networkmanager.enable = true;
 
-      # Set your time zone.
       time.timeZone = "Europe/Paris";
 
-      # Select internationalisation properties.
       i18n.defaultLocale = "en_US.UTF-8";
 
       i18n.extraLocaleSettings = {
@@ -48,13 +45,11 @@
         LC_TIME = "fr_FR.UTF-8";
       };
 
-      # Configure keymap in X11
       services.xserver.xkb = {
         layout = "us";
         variant = "";
       };
 
-      # Define a user account. Don't forget to set a password with ‘passwd’.
       users.users."phos" = {
         isNormalUser = true;
         description = "Phos";
@@ -70,7 +65,7 @@
 
       programs.zsh.enable = true;
       users.defaultUserShell = pkgs.zsh;
-      environment.shells = with pkgs; [ zsh ]; # From doc : To add the zsh package to /etc/shells you must update environment.shells.
+      environment.shells = [ pkgs.zsh ];
     };
 
   flake.homeModules.system = {

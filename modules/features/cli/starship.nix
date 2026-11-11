@@ -1,9 +1,8 @@
-{ ... }: {
-  flake.homeModules.starship = { pkgs, lib, ... }: {
+{
+  flake.homeModules.starship = { lib, ... }: {
     programs.starship = {
       enable = true;
       enableZshIntegration = true;
-      package = pkgs.starship;
 
       settings = {
         format = lib.concatStrings [
@@ -53,14 +52,6 @@
           symbol = " ";
           format = "─ [$\{symbol\}$\{pyenv_prefix\}($\{version\} )(\($virtualenv\) )]($style)";
         };
-
-        # git_branch = {
-        # };
-
-        # character = {
-        #    success_symbol = "➜";
-        #    error_symbol = "➜";
-        # };
       };
     };
   };

@@ -56,6 +56,7 @@ nix flake update  # mise à jour des inputs
 ## Conventions
 
 - **Un fichier de feature = un nom de sortie**, unique dans `flake.nixosModules` **et** `flake.homeModules`. Ces deux espaces sont plats : deux fichiers qui déclarent le même nom fusionnent **silencieusement** (ancien bug : `homeModules.base` défini à la fois par `applications/base.nix` et `cli/base.nix`, qui dupliquait `localsend` dans `home.packages`).
+- **Pas de wrapper inutile.** Un fichier qui n'utilise aucun argument flake-parts (`self`, `inputs`, `lib`…) est un attrset nu, pas une fonction : `{` … `}` et non `{ ... }: {` … `}`. De même pour la valeur d'un module : `flake.homeModules.x = { ... };` (avec ses options directement dedans) et non `= { ... }: { ... };`. On ne garde l'en-tête `{ args }: {` que si le corps en a besoin.
 - **Une catégorie n'importe que les fichiers de son propre dossier.** Une feature de `system/` importée par `desktop/default.nix` est une incohérence : déplacer le fichier.
 - **Chaque feature est importée par le `default.nix` de son dossier** — sinon c'est du code mort.
 - **Un profil ne contient que des imports** (au plus des `lib.mkDefault`). Jamais de `home.packages` ni de configuration concrète : sinon on ne sait plus qui a posé une valeur.
@@ -79,5 +80,5 @@ nix flake update  # mise à jour des inputs
 - `secretspec.toml` est un gabarit vide (aucun secret réel) ; `readme.md` est un stub (« installation : »). Ne pas s'appuyer dessus comme documentation.
 - Les alias zsh `rebuild`/`hrebuild`/`update` (`features/cli/zsh.nix`) délèguent à `nh os switch` / `nh home switch` / `nix flake update` sur `/home/phos/dotfiles`.
 - `devenv/vs/` est un projet Python/uv indépendant (vapoursynth, package `boshi`), non importé par le flake ; `devenv/` n'est pas un output du dépôt.
-- `modules/parts.nix` déclare quatre `systems` (`x86_64-linux`, `aarch64-linux`, `x86_64-darwin`, `aarch64-darwin`) alors que seul `x86_64-linux` est utilisé : le check treefmt est exposé pour les quatre.
+- `modules/parts.nix` déclare un seul `systems` (`x86_64-linux`), la seule plateforme utilisée ; ajouter une entrée ici expose `formatter`/`checks` pour cette plateforme.
 - Beaucoup de réglages codent l'identité en dur (`phos`, `/home/phos`, hostname `nixos`, `Europe/Paris`, sortie écran `DP-1`, port `9119` du dashboard hermes) : un renommage touche plusieurs fichiers.

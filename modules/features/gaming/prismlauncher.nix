@@ -1,4 +1,4 @@
-{ ... }: {
+{
   flake.homeModules.prismlauncher = { pkgs, ... }: {
     home.packages = with pkgs; [
       (prismlauncher.override {

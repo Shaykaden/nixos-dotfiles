@@ -1,5 +1,5 @@
-{ self, inputs, ... }: {
-  flake.homeModules.zen = { ... }: {
+{ inputs, ... }: {
+  flake.homeModules.zen = {
     imports = [
       inputs.zen-browser.homeModules.beta
     ];

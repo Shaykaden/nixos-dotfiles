@@ -1,5 +1,5 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.xremap = { ... }: {
+{ inputs, ... }: {
+  flake.nixosModules.xremap = {
     imports = [
       inputs.xremap-flake.nixosModules.default
     ];

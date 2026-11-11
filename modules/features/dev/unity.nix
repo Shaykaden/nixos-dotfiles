@@ -1,5 +1,5 @@
-{ ... }: {
-  flake.nixosModules.unity = { ... }: {
+{
+  flake.nixosModules.unity = {
     services.flatpak.packages = [
       {
         appId = "com.unity.UnityHub";
@@ -48,5 +48,4 @@
         path=("$HOME/.local/share/unity-cli/bin" $path)
       '';
     };
-
 }

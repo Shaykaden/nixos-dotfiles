@@ -1,4 +1,4 @@
-{ ... }: {
+{
   # TODO : keybinds
   flake.homeModules.zed = { pkgs, ... }: {
     programs.zed-editor = {
@@ -218,16 +218,6 @@
             ];
           };
         };
-
-        # edit_predictions = {
-        #   open_ai_compatible_api = {
-        #     model = "";
-        #   };
-        #   ollama = {
-        #     model = "qwen2.5-coder =7b-base";
-        #     api_url = "http =//localhost =11434";
-        #   };
-        # };
 
         telemetry = {
           diagnostics = false;

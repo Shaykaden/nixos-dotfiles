@@ -1,5 +1,4 @@
 { inputs, ... }: {
-
   flake.nixosModules.gaming-system = { pkgs, ... }: {
     boot.kernelModules = [ "ntsync" ]; # enable ntsync (from what I read, it's not on by default)
 

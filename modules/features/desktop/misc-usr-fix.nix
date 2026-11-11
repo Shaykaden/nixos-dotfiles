@@ -1,5 +1,5 @@
 # CHECK : https://wiki.nixos.org/wiki/Fixes_for_non-Nix_applications
-{ ... }: {
+{
   flake.nixosModules.misc-usr-fix =
     { pkgs, ... }:
     let
